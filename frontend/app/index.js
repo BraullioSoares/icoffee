@@ -1,4 +1,4 @@
-angular.module('primeiraApp', [
+angular.module('iCoffeeApp', [
     'ui.router',
     'ngAnimate',
     'toastr'
