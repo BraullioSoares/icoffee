@@ -3,7 +3,7 @@ angular.module('iCoffeeApp').constant('consts', {
     version: '1.0',
     owner: 'iCoffee',
     year: '2018',
-    site: 'http://cod3r.com.br',
+    site: 'http://icoffee.com.br',
     apiUrl: 'http://localhost:3000/api',
   }).run(['$rootScope', 'consts', function($rootScope, consts) {
     $rootScope.consts = consts
