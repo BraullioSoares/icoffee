@@ -2,9 +2,9 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Street</th>
-                    <th>Number</th>
-                    <th>neighborhood</th>
+                    <th>Nome da rua</th>
+                    <th>Número da casa</th>
+                    <th>Bairro</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,11 +19,11 @@
                         <input ng-model="address.neighborhood" class="form-control" placeholder="Informe o bairro" ng-readonly="clientsCtrl.tabDelete" />
                     </td>
                     <td style="width:150px;" ng-if="!clientsCtrl.tabDelete">
-                        <button class="btn btn-success" ng-click="clientsCtrl.addAdress($index)"><i class="fa fa-plus"></i></button>
-                        <button class="btn btn-warning" ng-click="clientsCtrl.cloneAdress($index,adress)"><i class="fa fa-clone"></i></button>
-                        <button class="btn btn-danger" ng-click="clientsCtrl.deleteAdress($index)"><i class="fa fa-trash-o"></i></button>
+                        <button class="btn btn-success" ng-click="clientsCtrl.addAddress($index)"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-warning" ng-click="clientsCtrl.cloneAddress($index,address)"><i class="fa fa-clone"></i></button>
+                        <button class="btn btn-danger" ng-click="clientsCtrl.deleteAddress($index)"><i class="fa fa-trash-o"></i></button>
                     </td>
-                    <td style="width:150px;" ng-if="OrdersCtrl.tabDelete">
+                    <td style="width:150px;" ng-if="clientsCtrl.tabDelete">
                         <button class="btn btn-success disabled"><i class="fa fa-plus"></i></button>
                         <button class="btn btn-warning disabled"><i class="fa fa-clone"></i></button>
                         <button class="btn btn-danger disabled"><i class="fa fa-trash-o"></i></button>

@@ -1,7 +1,7 @@
 <div class="role">
         <div class="box-body">
-                <field id="orderClientId" label="Nome" placeholder="Informe o Nome" grid="12 6 4" model="ordCtrl.orders.name"
-                    readonly="ordCtrl.tabDelete"></field>            
+                <field id="orderClientId" label="Nome" placeholder="Informe o Nome" grid="12 6 4" model="clientsCtrl.client .name"
+                    readonly="clientsCtrl.tabDelete"></field>            
         
                 <div class="col-xs-12 col-lg-6">
                     <fieldset>
@@ -18,9 +18,9 @@
             </div>
         
     <div class="box-footer">
-        <button class="btn btn-primary" ng-if="ordCtrl.tabCreate" ng-click="ordCtrl.create()">Incluir</button>
-        <button class="btn btn-info" ng-if="ordCtrl.tabUpdate" ng-click="ordCtrl.update()">Update</button>
-        <button class="btn btn-danger" ng-if="ordCtrl.tabDelete" ng-click="ordCtrl.delete()">Delete</button>
-        <button class="btn btn-default" ng-click="ordCtrl.refresh()">Cancelar</button>
+        <button class="btn btn-primary" ng-if="clientsCtrl.tabCreate" ng-click="clientsCtrl.create()">Incluir</button>
+        <button class="btn btn-info" ng-if="clientsCtrl.tabUpdate" ng-click="clientsCtrl.update()">Update</button>
+        <button class="btn btn-danger" ng-if="clientsCtrl.tabDelete" ng-click="clientsCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="clientsCtrl.refresh()">Cancelar</button>
     </div>
 </div>

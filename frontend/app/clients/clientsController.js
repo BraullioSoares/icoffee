@@ -16,7 +16,7 @@
         vm.refresh = function() {
             const page = parseInt($location.search().page) || 1
             $http.get(`${url}?skip=${(page - 1) * 10}&liimit=10`).then(function(response) {
-                vm.client = {address: [{}], orders: [{}]}
+                vm.client = {address: [{}], order: [{}]}
                 vm.clients = response.data
             
                 $http.get(`${url}/count`).then(function(response) {
