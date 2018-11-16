@@ -8,20 +8,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="address in ordCtrl.order.address">
+                <tr ng-repeat="address in clientsCtrl.client.address">
                     <td>
-                        <input ng-model="address.name" class="form-control" placeholder="Informe a rua" ng-readonly="ordCtrl.tabDelete" />
+                        <input ng-model="address.name" class="form-control" placeholder="Informe a rua" ng-readonly="clientsCtrl.tabDelete" />
                     </td>
                     <td>
-                        <input ng-model="address.number" class="form-control" placeholder="Informe o numero da casa" ng-readonly="ordCtrl.tabDelete" />
+                        <input ng-model="address.number" class="form-control" placeholder="Informe o numero da casa" ng-readonly="clientsCtrl.tabDelete" />
                     </td>
                     <td>
-                        <input ng-model="address.neighborhood" class="form-control" placeholder="Informe o bairro" ng-readonly="ordCtrl.tabDelete" />
+                        <input ng-model="address.neighborhood" class="form-control" placeholder="Informe o bairro" ng-readonly="clientsCtrl.tabDelete" />
                     </td>
-                    <td style="width:150px;" ng-if="!ordCtrl.tabDelete">
-                        <button class="btn btn-success" ng-click="ordCtrl.addAdress($index)"><i class="fa fa-plus"></i></button>
-                        <button class="btn btn-warning" ng-click="ordCtrl.cloneAdress($index,adress)"><i class="fa fa-clone"></i></button>
-                        <button class="btn btn-danger" ng-click="ordCtrl.deleteAdress($index)"><i class="fa fa-trash-o"></i></button>
+                    <td style="width:150px;" ng-if="!clientsCtrl.tabDelete">
+                        <button class="btn btn-success" ng-click="clientsCtrl.addAdress($index)"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-warning" ng-click="clientsCtrl.cloneAdress($index,adress)"><i class="fa fa-clone"></i></button>
+                        <button class="btn btn-danger" ng-click="clientsCtrl.deleteAdress($index)"><i class="fa fa-trash-o"></i></button>
                     </td>
                     <td style="width:150px;" ng-if="OrdersCtrl.tabDelete">
                         <button class="btn btn-success disabled"><i class="fa fa-plus"></i></button>

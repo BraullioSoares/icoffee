@@ -7,10 +7,10 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="order in ordCtrl.order.order">
+                <tr ng-repeat="client in clientsCtrl.clients.orders">
                         <td>
                         <div class="form-group">
-                            <select ng-model="order.items" placeholder="Informe o item" class="form-control" ng-disabled="ordCtrl.tabDelete">
+                            <select ng-model="orders.items" placeholder="Informe o item" class="form-control" ng-disabled="clientsCtrl.tabDelete">
                                 <option value="item1">File a moda da casa</option>
                                 <option value="item2">Açai</option>
                                 <option value="item3">Café</option>
@@ -19,13 +19,12 @@
                     </td>
                     
                     <td>
-                        <input ng-model="order.valor" class="form-control" placeholder="Informe o valor" ng-readonly="ordCtrl.tabDelete" />
+                        <input ng-model="order.valor" class="form-control" placeholder="Informe o valor" ng-readonly="clientsCtrl.tabDelete" />
                      </td>
-                  
-                    <td style="width:150px;" ng-if="!ordCtrl.tabDelete">
-                        <button class="btn btn-success" ng-click="ordCtrl.addOrder($index)"><i class="fa fa-plus"></i></button>
-                        <button class="btn btn-warning" ng-click="ordCtrl.cloneOrder($index,order)"><i class="fa fa-clone"></i></button>
-                        <button class="btn btn-danger" ng-click="ordCtrl.deleteOrder($index)"><i class="fa fa-trash-o"></i></button>
+                    <td style="width:150px;" ng-if="!clientsCtrl.tabDelete">
+                        <button class="btn btn-success" ng-click="clientsCtrl.addOrder($index)"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-warning" ng-click="clientsCtrl.cloneOrder($index,order)"><i class="fa fa-clone"></i></button>
+                        <button class="btn btn-danger" ng-click="clientsCtrl.deleteOrder($index)"><i class="fa fa-trash-o"></i></button>
                     </td>
                     <td style="width:150px;" ng-if="ordCtrl.tabDelete">
                         <button class="btn btn-success disabled"><i class="fa fa-plus"></i></button>

@@ -8,18 +8,18 @@
             </tr>
           </thead>
           <tbody>
-            <tr ng-repeat="orders in ordCtrl.order">
+            <tr ng-repeat="clients in clientsCtrl.client">
               <td>{{:: order.name }}</td>
               <td>{{:: order.address }}</td>
               <td>{{:: order.pedido }}</td>
               <td style="width:100px;">
-                <button class="btn btn-warning" ng-click="bcCtrl.showTabUpdate(order)"><i class="fa fa-pencil"></i></button>
-                <button class="btn btn-danger" ng-click="bcCtrl.showTabDelete(order)"><i class="fa fa-trash-o"></i></button>
+                <button class="btn btn-warning" ng-click="clientsCtrl.showTabUpdate(order)"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger" ng-click="clientsCtrl.showTabDelete(order)"><i class="fa fa-trash-o"></i></button>
               </td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="box-footer clearfix">
-         <paginator url="/#!/orders" pages="{{ ordCtrl.pages }}"></paginator>
+         <paginator url="/#!/clients" pages="{{ clientsCtrl.pages }}"></paginator>
       </div>
