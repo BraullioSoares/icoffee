@@ -64,6 +64,34 @@
                 msgs.addError(data.errors)
             })
         }
+
+        vm.addAddress = function(index) {
+            vm.client.address.splice(index + 1, 0, {})
+        }
+
+        vm.cloneAddress = function(index, {street, number, neighborhood}) {
+            vm.client.address.splice(index + 1, 0, {street, number,neighborhood})
+        }
+
+        vm.deleteAddress = function(index) {
+            if (vm.client.address.length > 1 ) {
+                vm.client.address.splice(index, 1)
+            }
+        }
+
+        vm.addOrder = function(index) {
+            vm.client.order.splice(index + 1, 0, {})
+        }
+
+        vm.cloneOrder = function(index, {item,value}) {
+            vm.client.order.splice(index + 1, 0, {item,value})
+        }
+
+        vm.deleteOrder = function(index) {
+            if (vm.client.order.length > 1 ) {  
+                vm.client.order.splice(index, 1)
+            }
+        }
    
 
         vm.refresh()

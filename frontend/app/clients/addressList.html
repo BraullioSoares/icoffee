@@ -10,7 +10,7 @@
             <tbody>
                 <tr ng-repeat="address in clientsCtrl.client.address">
                     <td>
-                        <input ng-model="address.name" class="form-control" placeholder="Informe a rua" ng-readonly="clientsCtrl.tabDelete" />
+                        <input ng-model="address.street" class="form-control" placeholder="Informe a rua" ng-readonly="clientsCtrl.tabDelete" />
                     </td>
                     <td>
                         <input ng-model="address.number" class="form-control" placeholder="Informe o numero da casa" ng-readonly="clientsCtrl.tabDelete" />

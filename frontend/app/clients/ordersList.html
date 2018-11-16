@@ -10,7 +10,7 @@
                 <tr ng-repeat="order in clientsCtrl.client.order">
                         <td>
                         <div class="form-group">
-                            <select ng-model="order.status" placeholder="Informe o item" class="form-control" ng-disabled="clientsCtrl.tabDelete">
+                            <select ng-model="order.item" placeholder="Informe o item" class="form-control" ng-disabled="clientsCtrl.tabDelete">
                                 <option value="item1">File a moda da casa</option>
                                 <option value="item2">Açai</option>
                                 <option value="item3">Café</option>
@@ -19,7 +19,7 @@
                     </td>
                     
                     <td>
-                        <input ng-model="order.valor" class="form-control" placeholder="Informe o valor" ng-readonly="clientsCtrl.tabDelete" />
+                        <input ng-model="order.value" class="form-control" placeholder="Informe o valor" ng-readonly="clientsCtrl.tabDelete" />
                      </td>
                     <td style="width:150px;" ng-if="!clientsCtrl.tabDelete">
                         <button class="btn btn-success" ng-click="clientsCtrl.addOrder($index)"><i class="fa fa-plus"></i></button>

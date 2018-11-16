@@ -10,8 +10,10 @@
           <tbody>
             <tr ng-repeat="client in clientsCtrl.clients">
               <td>{{:: client.name }}</td>
-              <td>{{:: client.address }}</td>
-              <td>{{:: client.orders }}</td>
+              <tr ng-repeat="address in clientsCtrl.client.address">
+                <td>{{:: client.address}}</td>
+              </tr>
+              <td>{{:: client.order }}</td>
               <td style="width:100px;">
                 <button class="btn btn-warning" ng-click="clientsCtrl.showTabUpdate(client)"><i class="fa fa-pencil"></i></button>
                 <button class="btn btn-danger" ng-click="clientsCtrl.showTabDelete(client)"><i class="fa fa-trash-o"></i></button>
