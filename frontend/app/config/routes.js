@@ -8,6 +8,9 @@ angular.module('iCoffeeApp').config([
         }).state('billingCycle', {
             url: "/billingCycle?page",
             templateUrl: "billingCycle/tabs.html"
+        }).state('orders',{
+            url:"/orders?page",
+            templateUrl:"orders/tabs.html"
         })
 
         $urlRouterProvider.otherwise('/dashboard')

@@ -1,0 +1,34 @@
+<div class="col-xs-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Street</th>
+                    <th>Number</th>
+                    <th>neighborhood</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="address in ordCtrl.order.address">
+                    <td>
+                        <input ng-model="address.name" class="form-control" placeholder="Informe a rua" ng-readonly="ordCtrl.tabDelete" />
+                    </td>
+                    <td>
+                        <input ng-model="address.number" class="form-control" placeholder="Informe o numero da casa" ng-readonly="ordCtrl.tabDelete" />
+                    </td>
+                    <td>
+                        <input ng-model="address.neighborhood" class="form-control" placeholder="Informe o bairro" ng-readonly="ordCtrl.tabDelete" />
+                    </td>
+                    <td style="width:150px;" ng-if="!ordCtrl.tabDelete">
+                        <button class="btn btn-success" ng-click="ordCtrl.addAdress($index)"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-warning" ng-click="ordCtrl.cloneAdress($index,adress)"><i class="fa fa-clone"></i></button>
+                        <button class="btn btn-danger" ng-click="ordCtrl.deleteAdress($index)"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                    <td style="width:150px;" ng-if="OrdersCtrl.tabDelete">
+                        <button class="btn btn-success disabled"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-warning disabled"><i class="fa fa-clone"></i></button>
+                        <button class="btn btn-danger disabled"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
