@@ -11,21 +11,41 @@
     function ClientsController($http, $location, consts, msgs, tabs) {
         const vm = this
         const url = `${consts.apiUrl}/clients`
-        
-
+    
         vm.refresh = function() {
             const page = parseInt($location.search().page) || 1
             $http.get(`${url}?skip=${(page - 1) * 10}&liimit=10`).then(function(response) {
-                vm.client = {address: [{}], order: [{}]}
+                vm.client = {order: [{}]}
                 vm.clients = response.data
             
                 $http.get(`${url}/count`).then(function(response) {
                     vm.pages = Math.ceil(response.data.value / 10)
                     tabs.show(vm, {tabList: true, tabCreate: true})
                 })
-            })
+
+                $http.get(`${url}`).then(function(response) {
+                    
+                    var total = 0;
+                    var i = 0;
+                    var objetos = response.data
+                    console.log(objetos)
+                    objetos.forEach(element => {
+                        const array = element.order
+                        console.log(array)
+
+                        
+
+
+                    });
+                })
+
+
+                   
+             })
+             
         }
 
+       
         vm.create = function() {
             $http.post(url, vm.client).then(function(response) {
                 vm.refresh()
@@ -47,7 +67,7 @@
 
         vm.update = function() {
             const updateUrl = `${url}/${vm.client._id}`
-            $http.put(updateUrl, vm.order).then(function(response) {
+            $http.put(updateUrl, vm.client).then(function(response) {
                 vm.refresh()
                 msgs.addSuccess('Operação Efetuada com Sucesso!')
             }).catch(function(data) {
@@ -63,22 +83,8 @@
             }).catch(function(data) {
                 msgs.addError(data.errors)
             })
-        }
-
-        vm.addAddress = function(index) {
-            vm.client.address.splice(index + 1, 0, {})
-        }
-
-        vm.cloneAddress = function(index, {street, number, neighborhood}) {
-            vm.client.address.splice(index + 1, 0, {street, number,neighborhood})
-        }
-
-        vm.deleteAddress = function(index) {
-            if (vm.client.address.length > 1 ) {
-                vm.client.address.splice(index, 1)
-            }
-        }
-
+        } 
+        
         vm.addOrder = function(index) {
             vm.client.order.splice(index + 1, 0, {})
         }
@@ -92,6 +98,12 @@
                 vm.client.order.splice(index, 1)
             }
         }
+        
+        
+
+
+
+
    
 
         vm.refresh()
