@@ -1,7 +1,6 @@
 <div class="login-box" ng-controller="AuthCtrl as auth">
-    <div class="login-logo"><b> Primeira</b> APP</div>
+    <div class="login-logo"><span class="logo-lg"><i class="fa fa-coffee"></i> <b>i</b>Coffee</span></div>
     <div class="login-box-body">
-        <p class="login-box-msg">Bem vindo!</p>
         <form>
             <auth-field id="authName" model="auth.user.name" type="input"
                 placeholder="Informe o Nome" hide="auth.loginMode"></auth-field>
@@ -13,9 +12,9 @@
                 placeholder="Confirme a Senha" hide="auth.loginMode"></auth-field>
             <div class="row">
                 <div class="col-sm-4">
-                    <button class="btn btn-primary btn-block btn-flat"
+                    <button class="btn btn-default btn-block btn-flat"
                         ng-click="auth.login()" ng-show="auth.loginMode">Entrar</button>
-                    <button class="btn btn-primary btn-block btn-flat"
+                    <button class="btn btn-default btn-block btn-flat"
                         ng-click="auth.signup()" ng-hide="auth.loginMode">Registrar</button>                    
                 </div>
             </div>
@@ -28,8 +27,3 @@
         </a>
     </div>
 </div>
-
-<style>
-    html, .wrapper { background-color: #fff!important; }
-    .login-box-body { background-color: #eee; }
-</style>
