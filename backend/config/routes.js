@@ -16,7 +16,10 @@ module.exports = function (server) {
 	billingCycleService.register(protectedApi, '/billingCycles')
 
 	const billingSummaryService = require('../api/billingSummary/billingSummaryService')
-	protectedApi.route('/billingSummary').get(billingSummaryService.getSummary)
+    protectedApi.route('/billingSummary').get(billingSummaryService.getSummary)
+    
+    const clientsService = require('../api/clients/clientsService')
+	clientsService.register(protectedApi, '/clients')
 
 	/*
 	 * Rotas abertas
