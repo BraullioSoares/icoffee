@@ -11,7 +11,7 @@ angular.module('iCoffeeApp').component('authField', {
     },
     controller: function () {
         this.$onInit = () => {
-            this.iconClasses = `glyphicon glyphicon-${this.icon} form-controlfeedback`
+            this.iconClasses = `glyphicon glyphicon-${this.icon} form-control-feedback`
         }
     },
     template: `
