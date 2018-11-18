@@ -1,4 +1,0 @@
-{"_id":{"$oid":"5be75dd60f83d4eb6ed2a08d"},"ref":"REF001","item":"File a Moda da Casa","valor":{"$numberDouble":"27.9"}}
-{"_id":{"$oid":"5be75de30f83d4eb6ed2a093"},"ref":"REF002","item":"Picanha","valor":{"$numberDouble":"17.9"}}
-{"_id":{"$oid":"5be75dee0f83d4eb6ed2a099"},"ref":"REF003","item":"Fricasse","valor":{"$numberDouble":"15.9"}}
-{"_id":{"$oid":"5be75df60f83d4eb6ed2a09d"},"ref":"REF004","item":"Café Expresso","valor":{"$numberDouble":"2.9"}}

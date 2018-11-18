@@ -1,0 +1,29 @@
+<div class="login-box" ng-controller="AuthCtrl as auth">
+    <div class="login-logo"><span class="logo-lg"><i class="fa fa-coffee"></i> <b>i</b>Coffee</span></div>
+    <div class="login-box-body">
+        <form>
+            <auth-field id="authName" model="auth.user.name" type="input"
+                placeholder="Informe o Nome" hide="auth.loginMode" icon="user"></auth-field>
+            <auth-field id="authEmail" model="auth.user.email" type="email"
+                placeholder="Informe o E-mail" icon="envelope"></auth-field>
+            <auth-field id="authPass" model="auth.user.password" type="password"
+                placeholder="Informe a Senha" icon="lock"></auth-field>
+            <auth-field id="authConfirmPass" model="auth.user.confirm_password" type="password"
+                placeholder="Confirme a Senha" hide="auth.loginMode"></auth-field>
+            <div class="row">
+                <div class="col-sm-4">
+                    <button class="btn btn-default btn-block btn-flat"
+                        ng-click="auth.login()" ng-show="auth.loginMode">Entrar</button>
+                    <button class="btn btn-default btn-block btn-flat"
+                        ng-click="auth.signup()" ng-hide="auth.loginMode">Registrar</button>                    
+                </div>
+            </div>
+        </form>
+        <br />
+        <a href="javascript:;" ng-click="auth.changeMode()">
+            {{ auth.loginMode ? 
+                'Novo usuário? Registrar aqui!' :
+                'Já é cadastrado? Entrar aqui!' }}
+        </a>
+    </div>
+</div>

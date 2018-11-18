@@ -11,3 +11,6 @@ html {
 #toast-container {
     top: 70px;
 }
+
+html, .wrapper { background-color: #fff!important; }
+.login-box-body { background-color: #eee; }
