@@ -1,16 +1,19 @@
 angular.module('iCoffeeApp').config([
-	'$stateProvider',
-	'$urlRouterProvider',
-	'$httpProvider',
-	function ($stateProvider, $urlRouterProvider, $httpProvider) {
-		$stateProvider.state('dashboard', {
-			url: "/dashboard",
-			templateUrl: "dashboard/dashboard.html"
-		}).state('billingCycle', {
-			url: "/billingCycles?page",
-			templateUrl: "billingCycle/tabs.html"
-		})
-	
+    '$stateProvider',
+    '$urlRouterProvider',
+    '$httpProvider',
+    function($stateProvider, $urlRouterProvider) {
+        $stateProvider.state('dashboard', {
+            url: "/dashboard",
+            templateUrl: "dashboard/dashboard.html"
+        }).state('billingCycle', {
+            url: "/billingCycle?page",
+            templateUrl: "billingCycle/tabs.html"
+        }).state('clients',{
+            url:"/clients?page",
+            templateUrl:"clients/tabs.html"
+        })
+
 		$httpProvider.interceptors.push('handleResponseError')
 	}
 ])
@@ -26,15 +29,15 @@ angular.module('iCoffeeApp').config([
 
 		function validateUser() {
 			const user = auth.getUser()
-            const authPage = '/auth.html'
-            const isAuthPage = $window.location.href.includes(authPage)
-            if (!user && !isAuthPage) {
-                $window.location.href = authPage
-            } else if (user && !user.isValid) {
-                user.isValid = true
-                $http.defaults.headers.common.Authorization = user.token
-                isAuthPage ? $window.location.href = '/' : $location.path('/dashboard')
-            }
+      const authPage = '/auth.html'
+      const isAuthPage = $window.location.href.includes(authPage)
+      if (!user && !isAuthPage) {
+          $window.location.href = authPage
+      } else if (user && !user.isValid) {
+          user.isValid = true
+          $http.defaults.headers.common.Authorization = user.token
+          isAuthPage ? $window.location.href = '/' : $location.path('/dashboard')
+      }
 		}
 	}
 ])

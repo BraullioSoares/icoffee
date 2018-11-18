@@ -1,0 +1,37 @@
+<div class="col-md-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Valor</th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="order in clientsCtrl.client.order">
+                    <td>
+                        <div class="form-group">
+                            <select ng-model="order.item" placeholder="Informe o item" class="form-control" ng-disabled="clientsCtrl.tabDelete">
+                                <option value="File a moda da casa">File a moda da casa</option>
+                                <option value="Açai">Açai</option>
+                                <option value="Café">Café</option>
+                            </select>
+                        </div>
+                    </td>
+                    
+                    <td>
+                        <input ng-model="order.value" class="form-control" placeholder="Informe o valor" ng-readonly="clientsCtrl.tabDelete" />
+                     </td>
+                    <td style="width:150px;" ng-if="!clientsCtrl.tabDelete">
+                        <button class="btn btn-success" ng-click="clientsCtrl.addOrder($index)"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-warning" ng-click="clientsCtrl.cloneOrder($index,order)"><i class="fa fa-clone"></i></button>
+                        <button class="btn btn-danger" ng-click="clientsCtrl.deleteOrder($index)"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                    <td style="width:150px;" ng-if="clientsCtrl.tabDelete">
+                        <button class="btn btn-success disabled"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-warning disabled"><i class="fa fa-clone"></i></button>
+                        <button class="btn btn-danger disabled"><i class="fa fa-trash-o"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>

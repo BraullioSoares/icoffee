@@ -1,0 +1,31 @@
+<div class="role">
+        <div class="box-body">
+            <div class="row">
+                <div class="col-xs-12 col-lg-12">
+                    <fieldset>
+                        <legend>Dados do cliente</legend>
+                    </fieldset>
+                       <field id="orderClientId" label="Nome do cliente" placeholder="Informe o Nome" grid="12 12 12" model="clientsCtrl.client.name"
+                             readonly="clientsCtrl.tabDelete"></field>
+                        <field id="street" label="Nome da rua" placeholder="Informe a rua" grid="12 6 4" model="clientsCtrl.client.address.street"
+                            readonly="clientsCtrl.tabDelete"></field>
+                        <field id="street" label="Número da casa" placeholder="Informe o número da casa" grid="12 6 4" model="clientsCtrl.client.address.number"
+                            readonly="clientsCtrl.tabDelete"></field>
+                        <field id="street" label="Bairro" placeholder="Informe o bairro" grid="12 6 4" model="clientsCtrl.client.address.neighborhood"
+                            readonly="clientsCtrl.tabDelete"></field>        
+                </div>
+            </div>       
+            <div class="col-xs-12 col-lg-12">
+                    <fieldset>
+                        <legend>Pedido</legend>
+                        <div ng-include="'clients/ordersList.html'"></div>
+                    </fieldset>
+                </div>
+            </div>
+<div class="box-footer">
+        <button class="btn btn-primary" ng-if="clientsCtrl.tabCreate" ng-click="clientsCtrl.create()">Incluir</button>
+        <button class="btn btn-info" ng-if="clientsCtrl.tabUpdate" ng-click="clientsCtrl.update()">Update</button>
+        <button class="btn btn-danger" ng-if="clientsCtrl.tabDelete" ng-click="clientsCtrl.delete()">Delete</button>
+        <button class="btn btn-default" ng-click="clientsCtrl.refresh()">Cancelar</button>
+    </div>
+</div>

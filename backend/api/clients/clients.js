@@ -15,7 +15,7 @@ const orderSchema = new mongoose.Schema({
 
 const clientSchema = new mongoose.Schema({
     name: {type: String, required: true},
-    address: [addressSchema],
+    address: addressSchema,
     order: [orderSchema]
 })
 

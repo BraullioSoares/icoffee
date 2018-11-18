@@ -1,0 +1,42 @@
+<div class="box-body">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nome do cliente</th>
+              <th>Rua</th>
+              <th>Número</th>
+              <th>Bairro</th>
+              <th>Pedido</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="client in clientsCtrl.clients">
+              <td>{{::client.name }}</td>
+
+              <td>{{::client.address.street}}</td>
+              <td>{{::client.address.number}}</td>
+              <td>{{::client.address.neighborhood}}</td>
+              
+              <td>
+                <dl>
+                  <dd ng-repeat="client in client.order">{{client.item}}</dd>
+                </dl>
+              </td>
+              <td>
+                <dl>
+                  <dd ng-repeat="client in client.order">R{{client.value | currency}}</li>
+                </dl>
+              </td>
+
+              <td style="width:100px;">
+                <button class="btn btn-warning" ng-click="clientsCtrl.showTabUpdate(client)"><i class="fa fa-pencil"></i></button>
+                <button class="btn btn-danger" ng-click="clientsCtrl.showTabDelete(client)"><i class="fa fa-trash-o"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="box-footer clearfix">
+         <paginator url="/#!/clients" pages="{{ clientsCtrl.pages }}"></paginator>
+      </div>
